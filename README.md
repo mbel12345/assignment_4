@@ -21,6 +21,7 @@ git push -u origin main
 In WSL/VS Code Terminal:
 ```bash
 python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
