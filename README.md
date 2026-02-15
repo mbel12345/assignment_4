@@ -1,6 +1,9 @@
 # Project Setup
 
 ## Set up Repo
+In Github:
+Create new repo called assignment_4 and make sure it is public
+
 In WSL/VS Code Terminal:
 ```bash
 mkdir assignment_3
