@@ -21,6 +21,7 @@ git push -u origin main
 In WSL/VS Code Terminal:
 ```bash
 python -m venv venv
+pip install -r requirements.txt
 ```
 
 ## Run test cases
