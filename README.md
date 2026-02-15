@@ -6,8 +6,8 @@ Create new repo called assignment_4 and make sure it is public
 
 In WSL/VS Code Terminal:
 ```bash
-mkdir assignment_3
-cd assignment_3/
+mkdir assignment_4
+cd assignment_4/
 git init
 git branch -m main
 git remote add origin git@github.com:mbel12345/assignment_4.git
