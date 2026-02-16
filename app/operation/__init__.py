@@ -23,6 +23,6 @@ class Operation:
 
         # Divide a by b. Raise an error if b is zero.
         if b == 0:
-            raise ValueError('Division by zero is not allowed.')
+            raise ZeroDivisionError('Division by zero is not allowed.')
 
         return a / b

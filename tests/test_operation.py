@@ -252,7 +252,7 @@ def test_divide_operation_negative(mock, a: Number, b: Number):
 )
 def test_vision_by_zero_error(a: Number, b: Number):
 
-    with pytest.raises(ValueError, match='Division by zero is not allowed.') as division_error:
+    with pytest.raises(ZeroDivisionError, match='Division by zero is not allowed.') as division_error:
         Operation.division(a, b)
 
     assert 'Division by zero is not allowed.' in str(division_error.value), f'"Division by zero is not allowed" is expected to be in error message, but error message was "{division_error.value}"'
