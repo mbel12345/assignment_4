@@ -2,7 +2,9 @@ import pytest
 import sys
 
 from io import StringIO
+from unittest.mock import patch
 
+from app.calculation import AddCalculation
 from app.calculator import Calculator
 
 # This tests that the Calculator that the user sees works end-to-end
@@ -206,6 +208,15 @@ def test_division_by_zero(monkeypatch, capsys, inputs):
 
     actual = run_calc(monkeypatch, capsys, inputs)
     check_result(actual, 'Cannot divide by zero.\nPlease enter a non-zero divisor.\n')
+
+@patch.object(AddCalculation, 'execute')
+def test_unexpected_error(mock, monkeypatch, capsys):
+
+    # Force the code to go to the try-catch block that handles unexpected errors
+
+    mock.side_effect = Exception('Unknown calculator error.')
+    actual = run_calc(monkeypatch, capsys, ['add 3 4', 'exit'])
+    check_result(actual, 'An error occurred during calculation: Unknown calculator error.\nPlease try again.\n')
 
 '''
 ----------------------------------------------------------------
